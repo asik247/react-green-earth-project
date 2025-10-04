@@ -1,22 +1,21 @@
 import React from "react";
 import Navbar from "../components/Navbar";
-import { Outlet, useLoaderData } from "react-router";
+import { Outlet, useLoaderData, useNavigation } from "react-router";
 import Footer from "../components/Footer";
 import Main from "./Main";
-
+import { BeatLoader } from "react-spinners";
 
 const Root = () => {
-const promise = useLoaderData()
-// console.log(promise)
+  const navgation = useNavigation();
+  const promise = useLoaderData();
   return (
     <div>
-      {/* Nav bar code Navbar.jsx */}
       <Navbar></Navbar>
       <Outlet></Outlet>
-      <Main promise={promise.plants}></Main>
-        {/* Nav bar code Main.jsx */}
+      {navgation.state==='loading'?<p className="flex justify-center items-center mt-5"><BeatLoader></BeatLoader></p>:(
+         <Main promise={promise.plants}></Main>
+      )}
       <Footer></Footer>
-        {/* Nav bar code Footer.jsx */}
     </div>
   );
 };
