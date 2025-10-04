@@ -12,7 +12,7 @@ const Root = () => {
     <div>
       <Navbar></Navbar>
       <Outlet></Outlet>
-      {navgation.state==='loading'?<p className="flex justify-center items-center mt-5"><BeatLoader></BeatLoader></p>:(
+      {navgation.state==='loading'?<div className="flex justify-center items-center mt-5"><BeatLoader color={'red'}></BeatLoader></div>:(
          <Main promise={promise.plants}></Main>
       )}
       <Footer></Footer>

@@ -1,5 +1,6 @@
 import React from "react";
 import Container from "./Container";
+import ThemeToggle from "./ThemeToggle";
 
 const Navbar = () => {
   return (
@@ -77,7 +78,8 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn">Button</a>
+        {/* <a className="btn">Button</a> */}
+        <ThemeToggle></ThemeToggle>
       </div>
      
  

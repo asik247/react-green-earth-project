@@ -5,10 +5,12 @@ import App from "./App.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router";
 import Root from "./Pakges/Root.jsx";
 import MainCardDetails from "./Pakges/MainCardDetails.jsx";
+import { BeatLoader } from "react-spinners";
 const router = createBrowserRouter([
   {
     path: "/",
     loader: () => fetch("https://openapi.programming-hero.com/api/plants"),
+    hydrateFallbackElement:<BeatLoader className="flex justify-center items-center mt-5"></BeatLoader>,
     Component: Root,
   },
   {
